@@ -23,7 +23,7 @@ export function Navbar() {
         { name: "Process", href: "#process" },
         { name: "For Owners", href: "#business-owners" },
         { name: "For CPAs", href: "#cpas" },
-        { name: "Consultation", href: "#expectations" },
+        { name: "Consultant", href: "#about" },
     ];
 
     return (
