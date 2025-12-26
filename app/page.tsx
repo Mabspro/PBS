@@ -6,6 +6,7 @@ import { ConsultationExpectations } from "@/components/sections/ConsultationExpe
 import { IntakeForms } from "@/components/sections/IntakeForms";
 import { Footer } from "@/components/sections/Footer";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { About } from "@/components/sections/About";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <CleanupProcess />
         <BusinessOwners />
         <CPAs />
+        <About />
         <Testimonials />
         <ConsultationExpectations />
         <IntakeForms />
