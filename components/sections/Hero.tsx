@@ -51,15 +51,13 @@ export function Hero() {
                 {/* Video Placeholder */}
                 <FadeIn delay={0.5} direction="up">
                     <div className="mt-16 sm:mt-24 mx-auto max-w-5xl rounded-2xl overflow-hidden shadow-2xl border border-slate-100 bg-slate-50 aspect-video flex items-center justify-center relative group">
-                        <video
-                            src="/images/PBS-Video.mp4"
-                            className="w-full h-full object-cover"
-                            controls
-                            playsInline
-                            poster="/images/for-business-owners.png"
-                        >
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe
+                            className="w-full h-full"
+                            src="https://www.youtube.com/embed/nKP4Tfb88E0?rel=0"
+                            title="Phoenix Bookkeeping Introduction"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
                     </div>
                 </FadeIn>
             </div>
