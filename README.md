@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Phoenix Bookkeeping Website
 
-## Getting Started
+A premium, single-page React application built for **Phoenix Bookkeeping**, specializing in project-based bookkeeping cleanup for Business Owners and CPAs.
 
-First, run the development server:
+![Project Banner](public/og-image-placeholder.jpg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Overview
+
+This project is designed to be a high-conversion landing page that builds trust through aesthetic excellence and clear, persona-driven user flows. It features a modern tech stack, accessible UI components, and smooth animations.
+
+### Key Features
+- **Dual Persona Workflows**: Distinct content sections and intake paths for *Business Owners* vs. *CPAs*.
+- **Interactive Intake Modals**:
+  - Accessible, overlay-based forms powered by **Radix UI**.
+  - "Smart Expand" functionality allowing deep links (e.g., `/#intake-business`) to auto-open specific forms.
+  - Context-aware validation using **Zod** and **React Hook Form**.
+- **Visual Process Maps**: Mobile-responsive timelines that switch from horizontal (desktop) to vertical (mobile) layouts.
+- **Private Scheduling**: A hidden, no-index route (`/schedule`) for booking consultations via Calendly.
+- **Premium Aesthetics**:
+  - **Glassmorphism** sticky navigation.
+  - **Framer Motion** scroll reveals and entrance animations.
+  - Custom **Tailwind CSS v4** theme with "Navy & Soft Blue" palette.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14+](https://nextjs.org/) (App Router)
+- **Language**: TypeScript
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (using `@theme` variables)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **UI Primitives**: [Radix UI](https://www.radix-ui.com/) (Dialog, Slot)
+- **Forms**: React Hook Form + Zod
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/phoenix-bookkeeping.git
+   cd phoenix-bookkeeping/web
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📁 Project Structure
+
+```text
+web/
+├── app/
+│   ├── globals.css        # Tailwind v4 theme & global styles
+│   ├── layout.tsx         # Root layout (Fonts, SEO Metadata, Providers)
+│   ├── page.tsx           # Main Landing Page composition
+│   ├── robots.ts          # SEO crawler configuration
+│   └── schedule/          # Private scheduling page
+├── components/
+│   ├── sections/          # Major page sections (Hero, BusinessOwners, etc.)
+│   │   └── forms/         # Complex form logic components
+│   └── ui/                # Reusable atoms (Button, Dialog, Input)
+├── lib/
+│   ├── intake-context.tsx # Global state for Modal management
+│   ├── schemas.ts         # Zod validation schemas
+│   └── utils.ts           # Helper functions (cn)
+└── public/                # Static assets (images, fonts)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Customization Guide
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Colors & Branding
+The project uses **Tailwind v4 CSS variables** defined in `app/globals.css`.
+- **Navy Palette**: `--color-navy-50` to `--color-navy-900`
+- **Blue Palette**: `--color-blue-50` to `--color-blue-600`
+- **Fonts**: Configured in `app/layout.tsx` (`Playfair Display` & `Inter`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Modifying Forms
+Form validation logic is centralized in `lib/schemas.ts`.
+To add a field:
+1. Update the Zod schema in `lib/schemas.ts`.
+2. Add the JSX input field in `components/sections/forms/BusinessOwnerSection.tsx` (or CPASection).
 
-## Learn More
+### Connecting to Email
+Currently, forms log data to the console (`console.log`). To connect a real backend:
+1. Go to `components/sections/forms/BusinessOwnerSection.tsx`.
+2. Locate the `onSubmit` function.
+3. Replace the `setTimeout` mock with a call to your API (e.g., using `fetch` or a Server Action).
 
-To learn more about Next.js, take a look at the following resources:
+## 🚢 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The easiest way to deploy is via **Vercel**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push your code to a Git repository (GitHub/GitLab).
+2. Import the project into Vercel.
+3. Vercel will auto-detect Next.js and deploy.
 
-## Deploy on Vercel
+### SEO Notes
+- The main page (`/`) is indexed.
+- The schedule page (`/schedule`) is set to `noindex` in `robots.ts` and page metadata to keep it private.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+built with ❤️ by [Your Name/Agency]
