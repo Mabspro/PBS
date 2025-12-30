@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { useIntake } from "@/lib/intake-context";
+import { BusinessOwnerFAQ } from "./BusinessOwnerFAQ";
 
 export function BusinessOwners() {
     const { openBusinessIntake } = useIntake();
@@ -56,10 +57,6 @@ export function BusinessOwners() {
                             <p className="text-slate-500 italic mb-8 border-l-4 border-navy-200 pl-4 py-1">
                                 &quot;If your situation requires a CPA or tax professional after cleanup, we can help point you in the right direction.&quot;
                             </p>
-
-                            <Button onClick={openBusinessIntake} size="lg" className="h-14 px-8 text-base shadow-lg shadow-navy-900/10">
-                                Start Cleanup Assessment
-                            </Button>
                         </FadeIn>
                     </div>
 
@@ -75,6 +72,24 @@ export function BusinessOwners() {
                             <div className="absolute inset-0 bg-navy-900/10 mix-blend-multiply" />
                         </FadeIn>
                     </div>
+                </div>
+
+                {/* Business Owner FAQ Section */}
+                <div className="mt-20">
+                    <FadeIn>
+                        <h2 className="text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl mb-8 text-center">
+                            Frequently Asked Questions
+                        </h2>
+                    </FadeIn>
+                    <BusinessOwnerFAQ />
+                    
+                    <FadeIn delay={0.3}>
+                        <div className="text-center mt-12">
+                            <Button onClick={openBusinessIntake} size="lg" className="h-14 px-8 text-base shadow-lg shadow-navy-900/10">
+                                Start Cleanup Assessment
+                            </Button>
+                        </div>
+                    </FadeIn>
                 </div>
             </div>
         </section>

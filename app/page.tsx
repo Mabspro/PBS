@@ -5,7 +5,6 @@ import { CPAs } from "@/components/sections/CPAs";
 import { ConsultationExpectations } from "@/components/sections/ConsultationExpectations";
 import { IntakeForms } from "@/components/sections/IntakeForms";
 import { Footer } from "@/components/sections/Footer";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { About } from "@/components/sections/About";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         <BusinessOwners />
         <CPAs />
         <About />
-        <Testimonials />
         <ConsultationExpectations />
         <IntakeForms />
       </main>

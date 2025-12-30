@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, ShieldCheck, FileCheck } from "lucide-react";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/fade-in";
 import { useIntake } from "@/lib/intake-context";
+import { CPAFAQ } from "./CPAFAQ";
 
 export function CPAs() {
     const { openCPAIntake } = useIntake();
@@ -66,12 +67,29 @@ export function CPAs() {
                                     Boundary Statement: Phoenix Bookkeeping does not compete with tax preparation or advisory services.
                                 </p>
                             </div>
+                        </FadeIn>
+                    </div>
+                </div>
 
+                {/* CPA FAQ Section */}
+                <div className="mt-20">
+                    <FadeIn>
+                        <p className="text-navy-100 text-lg mb-6 text-center max-w-3xl mx-auto">
+                            Phoenix Bookkeeping Solutions provides project-based bookkeeping cleanup designed to support CPAs by delivering clean, reconciled, well-documented, CPA-ready financials.
+                        </p>
+                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8 text-center">
+                            CPA Referral FAQ
+                        </h2>
+                    </FadeIn>
+                    <CPAFAQ />
+                    
+                    <FadeIn delay={0.3}>
+                        <div className="text-center mt-12">
                             <Button onClick={openCPAIntake} size="lg" variant="secondary" className="h-14 px-8 text-base">
                                 Refer a Client for Cleanup <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
-                        </FadeIn>
-                    </div>
+                        </div>
+                    </FadeIn>
                 </div>
             </div>
         </section>
